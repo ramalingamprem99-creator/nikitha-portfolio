@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 200 30% 96%;
+
+    --card: 220 40% 10%;
+    --card-foreground: 200 30% 96%;
+
+    --popover: 220 40% 10%;
+    --popover-foreground: 200 30% 96%;
+
+    --primary: 175 80% 55%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 270 60% 65%;
+    --secondary-foreground: 222 47% 6%;
+
+    --muted: 220 25% 18%;
+    --muted-foreground: 210 20% 70%;
+
+    --accent: 320 80% 65%;
+    --accent-foreground: 222 47% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 200 30% 80%;
+    --input: 200 30% 80%;
+    --ring: 175 80% 55%;
+
+    --radius: 1.25rem;
+
+    /* Glass tokens */
+    --glass-bg: 200 40% 96% / 0.06;
+    --glass-bg-strong: 200 40% 96% / 0.1;
+    --glass-border: 200 60% 90% / 0.18;
+    --glass-highlight: 200 60% 95% / 0.35;
+
+    /* Gradients */
+    --gradient-aurora: radial-gradient(at 20% 20%, hsl(175 80% 55% / 0.35), transparent 50%),
+                       radial-gradient(at 80% 10%, hsl(270 70% 60% / 0.3), transparent 50%),
+                       radial-gradient(at 70% 80%, hsl(320 80% 60% / 0.28), transparent 50%),
+                       radial-gradient(at 10% 90%, hsl(210 90% 55% / 0.3), transparent 50%);
+    --gradient-text: linear-gradient(135deg, hsl(175 90% 70%), hsl(200 90% 80%) 40%, hsl(280 80% 80%) 80%);
+    --gradient-chip: linear-gradient(135deg, hsl(200 40% 96% / 0.14), hsl(200 40% 96% / 0.04));
+
+    /* Shadows */
+    --shadow-glass: 0 10px 40px -10px hsl(220 80% 5% / 0.6), inset 0 1px 0 0 hsl(var(--glass-highlight));
+    --shadow-glow: 0 0 60px -10px hsl(175 80% 55% / 0.6);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: hsl(var(--background));
+    background-image: var(--gradient-aurora);
+    background-attachment: fixed;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .glass {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(24px) saturate(140%);
+    -webkit-backdrop-filter: blur(24px) saturate(140%);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
+  }
+  .glass-strong {
+    background: hsl(var(--glass-bg-strong));
+    backdrop-filter: blur(32px) saturate(160%);
+    -webkit-backdrop-filter: blur(32px) saturate(160%);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
+  }
+  .glass-chip {
+    background: var(--gradient-chip);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--glass-border));
+  }
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .glow-ring {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@layer utilities {
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.55;
+    pointer-events: none;
+  }
+}
