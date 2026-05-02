@@ -1,0 +1,19 @@
+UPLOAD THIS PROJECT TO GITHUB
+
+1. Do NOT upload this ZIP file directly as one file.
+2. Extract/unzip this ZIP first.
+3. Open the extracted folder.
+4. Select ALL files and folders inside it, including:
+   - index.html
+   - package.json
+   - package-lock.json
+   - src
+   - public
+   - .github
+5. Drag those selected files into GitHub Upload files page.
+6. Commit changes.
+7. Go to Settings > Pages > Source > GitHub Actions.
+8. Go to Actions and wait for green check.
+
+Your website link will be:
+https://ramalingamprem99-creator.github.io/nikitha-portfolio/
